@@ -5,4 +5,7 @@ class Expense < ActiveRecord::Base
   def self.weekly_sum
     self.where("WEEK(postDate, 1) = ?", Date.today.cweek).sum(:amount)
   end
+  def self.monthly_items
+    self.where("Month(postDate) = ?", Date.today.month).reverse
+  end
 end

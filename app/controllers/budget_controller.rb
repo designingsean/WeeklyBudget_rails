@@ -3,7 +3,7 @@ class BudgetController < ApplicationController
     @monthly_sum = MONTHLY_BUDGET - Expense.monthly_sum
     @weekly_sum = WEEKLY_BUDGET - Expense.weekly_sum
     @weekly_percentage = (@weekly_sum/WEEKLY_BUDGET)*100
-    @expenses = Expense.all.reverse
+    @monthly_expenses = Expense.monthly_items
     @new_expense = Expense.new
   end
 
