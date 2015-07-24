@@ -1,35 +1,38 @@
 <div class="container">
-    <div class="row">
+  <div class="row">
     <div class="col-xs-6 col-sm-2">
       <h1>$<%= @monthly_sum %></h1>
     </div>
     <div class="col-xs-6 col-sm-2">
       <h1>$<%= @weekly_sum %></h1>
-        </div>
-        <div class="col-sm-8">
-            <div class="progress">
+    </div>
+    <div class="col-sm-8">
+      <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="<%= @weekly_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @weekly_percentage %>%;">
             <span class="sr-only"><%= @weekly_percentage %>% Complete</span>
-                  </div>
-            </div>
-        </div>
+          </div>
+      </div>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <div class="input-group">
-                <input class="form-control" type="number" min="0" max="9999" step="0.01" placeholder="Amount">
-                <span class="input-group-btn">
-                    <button class="btn btn-primary">Add</button>
-                </span>
-            </div>
-            <table class="table table-striped">
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <%= form_tag budget_create_path do %>
+      <%= hidden_field_tag "expense[postDate]", Date.today %>
+      <div class="input-group">
+        <%= number_field_tag "expense[amount]", nil, min: 0.01, max: 9999, step: 0.01, class: 'form-control', placeholder: 'Amount' %>
+        <span class="input-group-btn">
+          <%= button_tag 'Add', class: 'btn btn-primary' %>
+        </span>
+      </div>
+      <% end %>
+      <table class="table table-striped">
         <% @expenses.each do |expense| %>
-                <tr>
+          <tr>
             <td><%= expense.postDate %></td>
             <td><%= expense.amount %></td>
-                </tr>
+          </tr>
         <% end %>
-            </table>
-        </div>
+      </table>
     </div>
+  </div>
 </div>
