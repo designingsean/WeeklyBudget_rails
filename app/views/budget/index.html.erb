@@ -23,10 +23,12 @@
                 </span>
             </div>
             <table class="table table-striped">
+        <% @expenses.each do |expense| %>
                 <tr>
-                    <td>entry.postDate</td>
-                    <td>entry.amount</td>
+            <td><%= expense.postDate %></td>
+            <td><%= expense.amount %></td>
                 </tr>
+        <% end %>
             </table>
         </div>
     </div>
