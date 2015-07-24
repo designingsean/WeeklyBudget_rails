@@ -8,8 +8,8 @@
         </div>
         <div class="col-sm-8">
             <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="{{currentTotal.percent}}" aria-valuemin="0" aria-valuemax="100" style="width: {{currentTotal.percent}}%;">
-                        <span class="sr-only">currentTotal.percent% Complete</span>
+          <div class="progress-bar" role="progressbar" aria-valuenow="<%= @weekly_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @weekly_percentage %>%;">
+            <span class="sr-only"><%= @weekly_percentage %>% Complete</span>
                   </div>
             </div>
         </div>
