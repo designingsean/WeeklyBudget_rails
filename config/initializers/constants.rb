@@ -1,2 +1,2 @@
-WEEKLY_BUDGET = 180
-MONTHLY_BUDGET = (WEEKLY_BUDGET/7)*Date.today.end_of_month.day
+MONTHLY_BUDGET = 1200
+WEEKLY_BUDGET = (MONTHLY_BUDGET/Date.today.end_of_month.day)*7
