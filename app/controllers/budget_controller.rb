@@ -9,7 +9,7 @@ class BudgetController < ApplicationController
 
   def create
     Expense.create(expense_params)
-    redirect_to controller: "budget", action: "index"
+    redirect_to root_path
   end
 
   private
