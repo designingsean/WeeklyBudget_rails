@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   post 'budget/create'
 
   root 'budget#index'
+  scope '/', :controller => 'budget' do
+  end
 end
