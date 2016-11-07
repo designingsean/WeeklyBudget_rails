@@ -1,12 +1,9 @@
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-2">
+    <div class="col-sm-3">
       <h1>$<%= @monthly_sum %></h1>
     </div>
-    <div class="col-xs-6 col-sm-2">
-      <h1>$<%= @weekly_sum %></h1>
-    </div>
-    <div class="col-sm-8">
+    <div class="col-sm-9">
       <div class="progress">
           <div class="progress-bar" role="progressbar" aria-valuenow="<%= @weekly_percentage %>" aria-valuemin="0" aria-valuemax="100" style="width: <%= @weekly_percentage %>%;">
             <span class="sr-only"><%= @weekly_percentage %>% Complete</span>
@@ -19,9 +16,9 @@
       <%= form_tag budget_create_path do %>
       <%= hidden_field_tag "expense[postDate]", Date.today %>
       <div class="input-group">
-        <%= number_field_tag "expense[amount]", nil, min: 0.01, max: 9999, step: 0.01, class: 'form-control', placeholder: 'Amount' %>
+        <%= number_field_tag "expense[amount]", nil, min: 0.01, max: 9999, step: 0.01, class: 'form-control input-lg', placeholder: 'Amount' %>
         <span class="input-group-btn">
-          <%= button_tag 'Add', class: 'btn btn-primary' %>
+          <%= button_tag 'Add', class: 'btn btn-primary btn-lg' %>
         </span>
       </div>
       <% end %>
