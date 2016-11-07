@@ -1,6 +1,7 @@
 class BudgetController < ApplicationController
   def index
     @monthly_sum = MONTHLY_BUDGET - Expense.monthly_sum
+    @monthly_percentage = (@monthly_sum/MONTHLY_BUDGET)*100
     @weekly_sum = WEEKLY_BUDGET - Expense.weekly_sum
     @weekly_percentage = (@weekly_sum/WEEKLY_BUDGET)*100
     @monthly_expenses = Expense.monthly_items
